@@ -1,0 +1,230 @@
+body {
+    font-family:Liberation Sans,Arial,Helvetica,sans-serif;
+    color: #484848;
+    font-size: 14px;
+}
+
+h1 {
+    font-size: 20px;
+    font-weight: normal;
+    margin: 30px 0 15px 0;
+}
+
+#header {
+    border-bottom: 1px solid #888;
+    margin: 0 auto;
+    width: 900px;
+    height: 50px;
+}
+
+#footer {
+    border-top:1px solid #888;
+    margin: 0 auto;
+    margin-top: 15px;
+    width: 900px;
+    color: #888;
+    padding-top: 5px;
+    text-align: right;  
+    clear:both;
+}
+
+#content, #tagcontent, #maincontent {
+    margin: 0 auto;
+    width: 900px;
+}
+
+#maincontent, #tagcontent {
+    margin-top: 15px;
+}
+
+#welcomeintro {
+    width: 410px;
+    float: left;
+    font-size: 20px;    
+    padding-left: 40px;
+    
+}
+
+#intro {
+    margin: 0 auto;
+    padding: 30px 0;
+    width: 900px;
+    background-color: #edf0f6;
+}
+
+#projecttip {
+    position:relative;
+    left: 810px;
+    top: 5px;
+    color: #aaa;
+    margin-bottom: -25px;
+    font-size: 11px;
+    width: 450px;
+}
+
+#projecttip A, #projecttip A:hover, #projecttip A:visited {
+    color: #8ea1f2;
+}
+
+#projecttip img {
+    float: left;
+    margin-right: 10px;
+}
+
+#linktip {
+    position:relative;
+    left: 910px;
+    top: 5px;
+    color: #aaa;
+    margin-bottom: -25px;
+    font-size: 11px;
+    width: 450px;
+}
+
+#personal {
+    width: 450px;
+    float: left;
+    font-size: 12px;
+    color: #888;    
+}
+
+#personal A, #personal A:hover, #personal A:visited {
+    color: #888;
+    text-decoration: none;
+}
+
+
+#logo {
+    font-size: 24px;
+    font-weight: bold;
+    padding-top: 20px;
+}
+
+#navigation {
+    padding-top: 30px;
+    float: right;
+}
+
+.twocolumns {
+    width: 450px;
+    float: left;
+}
+
+#content .project {
+    height: 75px;
+    width: 400px;
+    float: left;
+    margin-left: 40px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+}
+
+#tagcontent .project {
+    width: 500px;
+    margin-bottom: 30px;
+    clear: left;
+}
+
+.project h3 {
+    font-size: 100%;
+    font-weight: bold;
+    margin: 0px;
+}
+
+.project img {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.tags, .tags a, .tags a:visited {
+    color: #888;
+}
+
+a {
+    color: #003CD7;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+a:visited {
+    color: #003CD7;
+}
+
+.tagbox {
+    margin-left: 40px;
+}
+
+#sidebar {
+    float: right;
+    width: 300px;
+}
+
+.sidebarbox {
+    padding: 15px 15px;
+    width: 270px;
+    background-color: #EDF0F6;
+    margin-bottom: 20px;
+}
+
+pre {
+    background-color: #EEEEEE;
+    border: 1px solid #DDDDDD;
+    font-size: 12px;
+    padding: 0.75em 1.5em;
+}
+
+#flink {
+    float: right;
+}
+
+#flink A, #flink A:hover, #flink A:visited {
+    color: #000000;
+    font-size: 8pt;
+    text-decoration: none;
+}
+
+#cats, .tagbox {    
+    line-height: 1.5;
+}
+
+.partlist td {
+    padding-right: 20px;
+}
+
+.partlist th {
+    border-bottom:1px solid #ccc;
+}
+
+.startoptional td {
+    border-top:1px dashed #ccc;
+}
+
+img.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ordernow {
+	font-size: 15px;
+    font-weight: bold;
+}
+
+.ordertable td {
+    border-bottom: 2px solid #ccc;
+    border-top: 2px solid #ccc;    
+}
+
+.ordertable {
+    border-collapse:collapse;
+    margin-top: 15px;
+}
+
+.delivery_green {
+    background-color: green; width: 10px; height: 10px; float: left; margin: 3px 3px 0 0;
+}
+
+.delivery_yellow {
+    background-color: #efae00; width: 10px; height: 10px; float: left; margin: 3px 3px 0 0;
+}

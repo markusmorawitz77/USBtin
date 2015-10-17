@@ -1,0 +1,600 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0028)http://www.fischl.de/usbtin/ -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>USBtin - USB to CAN interface - fischl.de</title>
+        <meta name="keywords" lang="de" content="USB CAN adapter">
+        <meta name="keywords" lang="en" content="USB CAN interface">
+        <meta name="description" content="USB to CAN interface.">
+        
+        <link rel="stylesheet" type="text/css" href="./USBtin - USB to CAN interface - fischl.de_files/style.css">
+        <link rel="stylesheet" type="text/css" href="./USBtin - USB to CAN interface - fischl.de_files/usbtin.css">
+    <style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+    <body>
+
+        <div id="header">
+            <div id="navigation">
+                <a href="http://www.fischl.de/">Home</a> | <a href="http://www.fischl.de/projects/">Projects</a> | <a href="http://www.fischl.de/contact.html">Contact</a>
+            </div>
+            <div id="logo">
+                Thomas Fischl
+            </div>
+        </div>
+
+        <div id="content">
+            
+            <div style="float:right;margin-left: 10px">
+                <div style="width:230px; background-color:#EDF0F6; padding: 10px;text-align: center; margin: 20px 0">
+                    <b>SMD board, programmed + tested</b><br>
+                    <div class="pdf"><a href="http://www.fischl.de/usbtin/USBtin_EB_v2.pdf">USBtin EB Datasheet</a></div><br>
+                    <img style="margin-top:10px;" src="./USBtin - USB to CAN interface - fischl.de_files/usbtin_eval_board.jpg" alt="USBtin SMD board prototype" width="200"><br>
+                    <div style="margin-top: 10px;font-size:20px">€ 34,90</div>
+                    <div style="font-size:10px">incl. 19% VAT excl. € 2 shipping</div>
+                    <a href="http://www.fischl.de/order/" class="ordernow">Order USBtin EB now!</a><br>
+                    <hr style="border:solid #ccc 1px; width: 200px;margin-top: 10px;margin-bottom: 10px;">
+                    <a href="http://www.amazon.de/dp/B00U42KYOG" class="ordernow">Buy on Amazon.de!</a>              
+                    <div style="font-size:10px">
+                       (€ 37,90 incl. 19% VAT excl. shipping)<br>
+                       <a href="https://www.amazon.de/gp/help/customer/display.html?nodeId=3839451" target="_blank">Shipping to all EU countries!</a>
+                    </div>
+                    <hr style="border:solid #ccc 1px; width: 200px;margin-top: 10px;margin-bottom: 10px;">
+                    <a href="http://www.amazon.co.uk/dp/B00U42KYOG" class="ordernow">Buy on Amazon.co.uk!</a>              
+                    <div style="font-size:10px">
+                       (£ 27,90 incl. 19% VAT excl. shipping)<br>
+                    </div>
+                </div>
+
+                <div style="width:230px; background-color:#EDF0F6; padding: 10px;text-align: center;margin: 20px 0">
+                    <b>PCB + programmed uC + crystal</b><br>
+                    <img src="./USBtin - USB to CAN interface - fischl.de_files/usbtin_pcb_uc_crystal.jpg" alt="USBtin: PCB, uC, crystal" style="margin-top:10px;"><br>
+                    <div style="margin-top: 10px;font-size:20px">€ 14,90</div>
+                    <div style="font-size:10px">incl. 19% VAT excl. € 2 shipping</div>
+                    <a href="http://www.fischl.de/order/" class="ordernow">Order USBtin-Set now!</a><br>
+                    <hr style="border:solid #ccc 1px; width: 200px;margin-top: 10px;margin-bottom: 10px;">
+                    <a href="http://www.amazon.de/dp/B00V58D27E" class="ordernow">Buy on Amazon.de!</a>              
+                    <div style="font-size:10px">
+                       (€ 17,90 incl. 19% VAT excl. shipping)<br>
+                       <a href="https://www.amazon.de/gp/help/customer/display.html?nodeId=3839451" target="_blank">Shipping to all EU countries!</a>
+                    </div>
+                </div>
+            </div>
+            
+            <h1>USBtin - USB to CAN interface</h1>
+            USBtin is a simple USB to CAN interface. It can monitor <a href="http://en.wikipedia.org/wiki/CAN_bus">CAN busses</a> and transmit CAN messages.
+            USBtin implements the USB CDC class and creates a virtual comport on the host computer.
+
+            <ul>
+                <li>Control with simple serial protocol (LAWICEL / SLCAN compatible)</li>
+                <li>Presets for common baud rates (10k ... 1M)</li>
+                <li>Listen-only and active mode</li>
+                <li>USB powered (no isolation between USB and CAN!)</li>
+                <li>120 Ohm termination via jumper</li>
+                <li>Bootloader for firmware updates</li>
+                <li>Open source GUI and Java Library</li>                
+            </ul>
+          
+            <h3>Contents</h3>
+            <div id="toc">
+                <ul>
+                    <li><a href="http://www.fischl.de/usbtin/#drivers">1 Drivers</a></li>
+                    <li>
+                        <a href="http://www.fischl.de/usbtin/#software">2 Software</a>
+                        <ul>
+                            <li><a href="http://www.fischl.de/usbtin/#usbtinviewer">2.1 USBtinViewer - Simple multi-platform GUI</a></li>
+                            <li><a href="http://www.fischl.de/usbtin/#usbtinlib">2.2 USBtinLib - Java Library for own developments</a></li> 
+                            <li><a href="http://www.fischl.de/usbtin/#serialterminal">2.3 Serial terminal - Control USBtin with any serial terminal</a></li>
+                            <li><a href="http://www.fischl.de/usbtin/#socketcan">2.4 Linux-can (SocketCAN) - Use linux CAN functions</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="http://www.fischl.de/usbtin/#firmware">3 Firmware</a>
+                        <ul>
+                            <li><a href="http://www.fischl.de/usbtin/#firmwarepackage">3.1 Source code and HEX file</a></li>
+                            <li><a href="http://www.fischl.de/usbtin/#bootloader">3.2 Firmware update via bootloader</a></li>
+                            <li><a href="http://www.fischl.de/usbtin/#commands">3.3 ASCII commands</a></li>
+                        </ul>
+                    </li>                   
+                    <li>
+                        <a href="http://www.fischl.de/usbtin/#hardware">4 Hardware</a>
+                        <ul>
+                            <li><a href="http://www.fischl.de/usbtin/#schematic">Schematic - USBtin's circuit diagram</a></li>
+                            <li><a href="http://www.fischl.de/usbtin/#partlist">Partlist - Build your own USBtin!</a></li>
+                        </ul>
+                    </li>
+                     <li>
+                        <a href="http://www.fischl.de/usbtin/#troubleshooting">5 Troubleshooting</a>
+                    </li>
+                    <li><a href="http://www.fischl.de/usbtin/#gallery">6 Gallery</a></li>
+                    <li><a href="http://www.fischl.de/usbtin/#links">7 Links</a></li>
+                </ul>
+            </div>
+            
+            <h2 id="drivers">Drivers</h2>
+            For <strong>Linux, MacOS and Windows &gt;8 no additional driver</strong> is needed! USBtin is automatically detected as virtual serial port.<br>
+            <br>
+            Driver for Windows &lt;8:
+            <div class="download"><a href="http://www.fischl.de/usbtin/downloads/USBtin_Win_Driver.zip">USBtin_Win_Driver.zip</a></div><br>
+            <br>
+            USBtin is mapped to serial port <strong>"/dev/ACMx"</strong> (Linux, MacOS) or <strong>"COMx"</strong> (Windows). You have to select this
+            corresponding port in the software.
+            On some Linux systems, "modemmanger" blocks the port for about 20s after plug-in (if this disturbs: disable or remove the modemmanager).
+            
+            <h2 id="software">Software</h2>
+            There are several options to control USBtin from the host computer.
+            <h3 id="usbtinviewer">USBtinViewer - Simple multi-platform GUI</h3>
+            <div>
+                <div style="float:left; margin-right: 20px"><a href="http://www.fischl.de/usbtin/pics/USBtinViewer.png"><img src="./USBtin - USB to CAN interface - fischl.de_files/USBtinViewer_small.png" alt="USBtinViewer" width="300" border="0"></a></div>
+                <div>
+                    USBtinViewer is a <strong>simple GUI for USBtin</strong>. It is open source (GPL), written in Java and runs on several platforms (Windows, Linux, MacOS).
+                    Depending on operating system, double-click the downloaded JAR file or run it from command line with "java -jar USBtinViewer_v1.0.jar".<br>
+                    Requirement: Java JRE&gt;=1.6<br>
+                    <br>                    
+                    <div class="download"><a href="http://www.fischl.de/usbtin/downloads/USBtinViewer_v1.2.jar">USBtinViewer_v1.2.jar</a> (2015-10-06)</div><br>
+                    <div class="link_en"><a href="https://github.com/EmbedME/USBtinViewer">USBtinViewer source code on GitHub</a></div><br>
+                </div>
+            </div>
+            <div style="clear:both"></div>
+            
+            
+            <h3 id="usbtinlib">USBtinLib - Java Library for own developments</h3>
+            <div>
+                <pre style="float:left; margin: 0 20px 0 0; width: 290px; font-size: 8px; padding: 5px;">usbtin.connect("COM3");
+
+usbtin.addMessageListener(new CANMessageListener() {
+    @Override
+    public void receiveCANMessage(CANMessage canmsg) {
+        System.out.println(canmsg);
+    }                
+});
+
+usbtin.openCANChannel(10000, USBtin.OpenMode.ACTIVE);
+
+System.in.read(); // wait for user input
+
+usbtin.send(new CANMessage(0x100, new byte[]{0x11}));
+
+usbtin.closeCANChannel();
+usbtin.disconnect();</pre>
+                <div>
+                    USBtinLib is a <strong>Java Library for accessing USBtin</strong>.
+                    It simplifies the use of USBtin in own applications.
+                    USBtinLib is open source (LGPL) and runs on several platforms (Windows, Linux, MacOS).
+                    The example code (left box) prints out incoming CAN messages and send out one message. Tutorial:
+                    <a href="http://www.fischl.de/usbtin/usbtinlib_guidemo/">Create own GUI with USBtinLib for testing or simulating CAN bus devices</a>.<br>
+                    Requirement: Java JRE&gt;=1.5<br>
+                    <br>
+                    <div class="download"><a href="http://www.fischl.de/usbtin/downloads/USBtinLib-1.1.0.jar">USBtinLib-1.1.0.jar</a> (2015-10-03)</div><br>
+                    <div class="link_en"><a href="https://github.com/EmbedME/USBtinLib">USBtinLib source code on GitHub</a></div><br>
+                    <div class="link_en"><a href="https://github.com/EmbedME/USBtinLibDemo">Demo application source code on GitHub</a></div><br>
+
+                    
+                </div>
+            </div>
+            <div style="clear:both"></div>
+            
+            <h3 id="serialterminal">Serial terminal - Control USBtin with any serial terminal</h3>
+            <div>
+                <div style="float:left; margin-right: 20px"><a href="http://www.fischl.de/usbtin/pics/hterm.png"><img src="./USBtin - USB to CAN interface - fischl.de_files/hterm_small.png" alt="Hterm in use with USBtin" width="300" border="0"></a></div>
+                <div>
+                    <a href="http://www.fischl.de/usbtin/#commands">Commands</a> to USBtin can be sent with <strong>any serial terminal program</strong> such as HTerm which is available as freeware for Windows and Linux.
+                There is a sequence file for HTerm with the main USBtin commands predefined. To load it in HTerm, right click into "Sequence Overview" -&gt; "Load File...".<br>
+                <br>
+                <div class="download"><a href="http://www.fischl.de/usbtin/downloads/USBtin_HTerm_Sequences.hts">USBtin_HTerm_Sequences.hts</a></div><br>                
+                <div class="link_de"><a href="http://www.der-hammer.info/terminal/">HTerm - Terminal program</a></div><br>
+                </div>
+            </div>
+            <div style="clear:both"></div>
+
+            <h3 id="socketcan">Linux-can (SocketCAN) - Use linux CAN functions</h3>
+            <div>
+                <div style="float:left; margin-right: 20px">
+                    <a href="http://www.fischl.de/usbtin/pics/wireshark.png"><img src="./USBtin - USB to CAN interface - fischl.de_files/wireshark_small.png" alt="Wireshark and USBtin" width="150" border="0"></a><a href="http://www.fischl.de/usbtin/pics/kayak.png"><img src="./USBtin - USB to CAN interface - fischl.de_files/kayak_small.png" alt="Kayak" width="150" border="0"></a>
+                </div>
+                <div>
+                    USBtin also works with <strong>linux-can (SocketCAN)</strong>. Here is short tutorial about this:<br>
+                    <a href="http://www.fischl.de/usbtin/linux_can_socketcan/">USBtin and linux-can (SocketCAN)</a><br>
+                    <br>
+                    Tools based on linux-can can be used with USBtin. For example:<br>
+                    <div class="link_en"><a href="http://kayak.2codeornot2code.org/">Kayak</a></div><br>
+                    <div class="link_en"><a href="https://www.wireshark.org/">Wireshark</a></div><br>
+                </div>
+            </div>
+            <div style="clear:both"></div>
+
+            
+            <h2 id="firmware">Firmware</h2>
+            
+            <h3 id="firmwarepackage">Source code and HEX file</h3>
+            The firmware of USBtin is available as precompiled HEX file and as C (XC8 compiler) source code:<br>
+            <br>
+            <div class="download"><a href="http://www.fischl.de/usbtin/downloads/usbtin.2014-12-05.tar.gz">usbtin.2014-12-05.tar.gz</a> Version v1.5 - New buffer structure with USB ping-pong and CDC directly to USB ram.</div><br>
+            <div class="download"><a href="http://www.fischl.de/usbtin/downloads/usbtin.2014-09-20.tar.gz">usbtin.2014-09-20.tar.gz</a> Version v1.4 - Improved performance: Increased bulk transfer packet size (patch by Jürgen Liegner)</div><br>
+            <div class="download"><a href="http://www.fischl.de/usbtin/downloads/usbtin.2014-04-07.tar.gz">usbtin.2014-04-07.tar.gz</a> Version v1.3 - Based on improvement suggestions by Mikael Gustavsson (<a href="http://www.ds30loader.com/">MG Digital Solutions</a>)</div><br>
+            <div class="download"><a href="http://www.fischl.de/usbtin/downloads/usbtin.2013-01-11.tar.gz">usbtin.2013-01-11.tar.gz</a> Version v1.2 - Added filter function 'm' and 'M' and register write 'W'</div><br>
+            <div class="download"><a href="http://www.fischl.de/usbtin/downloads/usbtin.2012-03-09.tar.gz">usbtin.2012-03-09.tar.gz</a> Version v1.1 - First public version</div><br>
+            
+            <h3 id="bootloader">Firmware update via bootloader</h3>
+            Set the bootloader jumper (JP1) and plug in USBtin. Now the bootloader starts. Use bootloader application (e.g. <img src="./USBtin - USB to CAN interface - fischl.de_files/en.png" alt="en"> <a href="http://code.google.com/p/mphidflash/">MPHidFlash</a>) to load the new firmware into the flash of USBtin:
+            <pre class="listing">mphidflash -w USBtin_firmware_v1.x.hex</pre>
+            
+            
+            <h3 id="commands">ASCII commands</h3>
+            USBtin registers as a virtual serial port on the host computer.
+            With simple ASCII commands USBtin can be controlled over this serial port.
+            You can send/receive commands from <a href="http://www.fischl.de/usbtin/#serialterminal">any serial terminal program</a> or from your <a href="http://www.fischl.de/usbtin/#usbtinlib">own program</a>.
+            If you don't like to deal with the plain commands, there is also a simple GUI: <a href="http://www.fischl.de/usbtin/#usbtinviewer">USBtinViewer</a>.
+            
+            <h4>Example</h4>
+            Set 10 kBaud, open CAN channel, send CAN message (id=001h, dlc=4, data=11 22 33 44), close CAN:<br>
+            <pre style="width: 300px">Command:                Response:
+S0[CR]                  [CR]
+O[CR]                   [CR]
+t001411223344[CR]       z[CR]
+C[CR]                   [CR]</pre>             
+            
+            <h4>Command list</h4>
+            The commands are line based and terminated with newline character CR (0xD). On error the USBtin responses with 0x7.<br>
+            <br>
+             <table id="cmdtable">
+               <tbody><tr>
+                 <td>Sx[CR]</td>
+                 <td>
+                   Set baudrate<br>
+                   x: Bitrate id (0-8)<br>
+                   &nbsp;S0 = 10 kBaud<br>
+                   &nbsp;S1 = 20 kBaud<br>
+                   &nbsp;S2 = 50 kBaud<br>
+                   &nbsp;S3 = 100 kBaud<br>
+                   &nbsp;S4 = 125 kBaud<br>
+                   &nbsp;S5 = 250 kBaud<br>
+                   &nbsp;S6 = 500 kBaud<br>
+                   &nbsp;S7 = 800 kBaud<br>
+                   &nbsp;S8 = 1 MBaud<br>
+                 </td>
+               </tr>
+               <tr>
+                 <td>sxxyyzz[CR]</td>
+                 <td>
+                   Set can bitrate registers of MCP2515.
+                   You can set non-standard baudrates which are not supported by the "Sx" command.<br>
+                   xx: CNF1 as hexadecimal value (00-FF)<br>
+                   yy: CNF2 as hexadecimal value (00-FF)<br>
+                   zz: CNF3 as hexadecimal value<br>
+                 </td>
+               </tr>
+               <tr>
+                 <td>Gxx[CR]</td>
+                 <td>
+                   Read MCP2515 register.
+                   xx: Address of MCP2515 register to read as hexadecimal value (00-FF).<br>
+                 </td>
+               </tr>
+               <tr>
+                 <td>Wxxyy[CR]</td>
+                 <td>
+                   Write MCP2515 register.
+                   xx: Address of MCP2515 register to write. Hexadecimal value (00-FF).<br>
+                   yy: Data to write to the register. Hexadecimal value (00-FF).<br>
+                 </td>
+               </tr>
+               <tr>
+                 <td>V[CR]</td>
+                 <td>Get hardware version.</td>
+               </tr>
+               <tr>
+                 <td>v[CR]</td>
+                 <td>Get firmware version.</td>
+               </tr>
+               <tr>
+                 <td>N[CR]</td>
+                 <td>Get serial number. Returns always 0xffff.</td>
+               </tr>
+               <tr>
+                 <td>O[CR]</td>
+                 <td>Open CAN channel.</td>
+               </tr>
+               <tr>
+                 <td>l[CR]</td>
+                 <td>Open device in loop back mode.</td>
+               </tr>
+               <tr>
+                 <td>L[CR]</td>
+                 <td>Open CAN channel in listen-only mode.</td>
+               </tr>
+               <tr>
+                 <td>C[CR]</td>
+                 <td>Close CAN channel</td>
+               </tr>
+               <tr>
+                 <td>tiiildd..[CR]</td>
+                 <td>
+                   Transmit standard (11 bit) frame.<br>
+                   iii: Identifier in hexadecimal format (000-7FF)<br>
+                   l: Data length (0-8)<br>
+                   dd: Data byte value in hexadecimal format (00-FF)<br>
+                 </td>
+               </tr>
+               <tr>
+                 <td>Tiiiiiiiildd..[CR]</td>
+                 <td>
+                   Transmit extended (29 bit) frame.<br>
+                   iiiiiiii: Identifier in hexadecimal format (0000000-1FFFFFFF)<br>
+                   l: Data length (0-8)<br>
+                   dd: Data byte value in hexadecimal format (00-FF)<br>
+                 </td>
+               </tr>
+               <tr>
+                 <td>riiil[CR]</td>
+                 <td>
+                   Transmit standard RTR (11 bit) frame.<br>
+                   iii: Identifier in hexadecimal format (000-7FF)<br>
+                   l: Data length (0-8)<br>
+                 </td>
+               </tr>
+               <tr>
+                 <td>Riiiiiiiil[CR]</td>
+                 <td>
+                   Transmit extended RTR (29 bit) frame.<br>
+                   iiiiiiii: Identifier in hexadecimal format (0000000-1FFFFFFF)<br>
+                   l: Data length (0-8)<br>
+                 </td>
+               </tr>
+               <tr>
+                 <td>F[CR]</td>
+                 <td>
+                   Read status/error flag of can controller<br>
+                   Return: Fxx[CR] with xx as hexadecimal byte with following error flags:<br>
+                   Bit 0 - not used<br>
+                   Bit 1 - not used<br>
+                   Bit 2 - Error warning (Bit EWARN of MCP2515)<br>
+                   Bit 3 - Data overrun (Bit RX1OVR or RX0OVR of MCP2515)<br>
+                   Bit 4 - not used<br>
+                   Bit 5 - Error-Passive (Bit TXEP or RXEP of MCP2515)<br>
+                   Bit 6 - not used<br>
+                   Bit 7 - Bus error (Bit TXBO of MCP2515)<br>
+                 </td>
+               </tr>
+               <tr>
+                 <td>Zx[CR]</td>
+                 <td>
+                    Set timestamping on/off.<br>
+                    x: 0=off, 1=on<br>
+                 </td>
+               </tr>
+               <tr>
+                 <td>mxxxxxxxx[CR]</td>
+                 <td>
+                    Set accpetance filter mask. SJA1000 format (AM0..AM3). Only first 11bit are relevant.<br>
+                    xxxxxxxx: Acceptance filter mask<br>
+                 </td>
+               </tr>
+               <tr>
+                 <td>Mxxxxxxxx[CR]</td>
+                 <td>
+                    Set accpetance filter code. SJA1000 format (AC0..AC3). Only first 11bit are relevant.<br>
+                    xxxxxxxx: Acceptance filter code<br>
+                 </td>
+               </tr>
+             </tbody></table>
+            
+            
+            
+            
+            
+            
+          <h2 id="hardware">Hardware</h2>
+          <h3 id="schematic">Schematic - USBtin's circuit diagram</h3>
+          <a href="http://www.fischl.de/usbtin/usbtin_circuit.pdf"><img src="./USBtin - USB to CAN interface - fischl.de_files/usbtin_circuit.png" width="700" border="0" alt="USBtin Schematic"></a><br>
+          
+          <h3 id="partlist">Partlist - Build your own USBtin!</h3>
+          
+          
+          <div style="float:right;margin-left: 10px">
+                <div style="width:230px; background-color:#EDF0F6; padding: 10px;text-align: center;margin: 20px 0">
+                    <b>PCB + programmed uC + crystal</b><br>
+                    <img src="./USBtin - USB to CAN interface - fischl.de_files/usbtin_pcb_uc_crystal.jpg" alt="USBtin: PCB, uC, crystal" style="margin-top:10px;"><br>
+                    <div style="margin-top: 10px;font-size:20px">€ 14,90</div>
+                    <div style="font-size:10px">incl. 19% VAT excl. € 2 shipping</div>
+                    <a href="http://www.fischl.de/order/" class="ordernow">Order USBtin-Set now!</a><br>
+                    <hr style="border:solid #ccc 1px; width: 200px;margin-top: 10px;margin-bottom: 10px;">
+                    <a href="http://www.amazon.de/dp/B00V58D27E" class="ordernow">Buy on Amazon.de!</a>              
+                    <div style="font-size:10px">
+                       (€ 17,90 incl. 19% VAT excl. shipping)<br>
+                       <a href="https://www.amazon.de/gp/help/customer/display.html?nodeId=3839451" target="_blank">Shipping to all EU countries!</a>
+                    </div>              
+                </div>
+
+                <div style="width:230px; background-color:#EDF0F6; padding: 10px;text-align: center; margin: 20px 0">
+                    <b>SMD board, programmed + tested</b><br>
+                    <div class="pdf"><a href="http://www.fischl.de/usbtin/USBtin_EB_v2.pdf">USBtin EB Datasheet</a></div><br>
+                    <img style="margin-top:10px;" src="./USBtin - USB to CAN interface - fischl.de_files/usbtin_eval_board.jpg" alt="USBtin SMD board prototype" width="200"><br>
+                    <div style="margin-top: 10px;font-size:20px">€ 34,90</div>
+                    <div style="font-size:10px">incl. 19% VAT excl. € 2 shipping</div>
+                    <a href="http://www.fischl.de/order/" class="ordernow">Order USBtin EB now!</a><br>
+                    <hr style="border:solid #ccc 1px; width: 200px;margin-top: 10px;margin-bottom: 10px;">
+                    <a href="http://www.amazon.de/dp/B00U42KYOG" class="ordernow">Buy on Amazon.de!</a>              
+                    <div style="font-size:10px">
+                       (€ 37,90 incl. 19% VAT excl. shipping)<br>
+                       <a href="https://www.amazon.de/gp/help/customer/display.html?nodeId=3839451" target="_blank">Shipping to all EU countries!</a>
+                    </div>
+                    <hr style="border:solid #ccc 1px; width: 200px;margin-top: 10px;margin-bottom: 10px;">
+                    <a href="http://www.amazon.co.uk/dp/B00U42KYOG" class="ordernow">Buy on Amazon.co.uk!</a>              
+                    <div style="font-size:10px">
+                       (£ 27,90 incl. 19% VAT excl. shipping)<br>
+                    </div>
+                </div>
+
+            </div>
+          
+                    
+
+          Here you find a list of all parts needed to build your own USBtin board.
+          The <font color="red">red marked</font> parts are also available as <a href="http://www.fischl.de/order/">USBtin-Set (PCB + programmed uC + crystal)</a> - see photo in right box.<br>
+          <br>
+          
+          <table class="partlist">
+              <tbody><tr><th>Partnumber</th><th>Value</th><th><a href="http://www.reichelt.de/">Reichelt</a></th><th><a href="http://www.conrad.de/">Conrad</a></th></tr>
+              <tr><td>C1</td><td>4,7u</td>              <td>RAD 4,7/35</td>      <td>445587 - 62</td></tr>
+              <tr><td>C2, C3, C4, C5</td><td>100n</td>  <td>X7R-5 100N</td>      <td>531855 - 62</td></tr>              
+              <tr><td>C6, C7</td><td>22p</td>           <td>KERKO 22P</td>       <td>457167 - 62</td></tr>
+              <tr><td>CON1</td><td>USB-B</td>           <td>USB BW</td>          <td>738884 - 62</td></tr>
+              <tr><td>CON2</td><td>3pol</td>            <td>AKL 182-03</td>      <td>729906 - 62</td></tr>
+              <tr><td class="setpart">IC1</td><td class="setpart">PIC18F14K50-I/P</td>  <td>PIC18F14K50-IP<br>(not programmed!)</td><td>651666 - 62<br>(not programmed!)</td></tr>
+              <tr><td>IC2</td><td>MCP2515-I/P</td>      <td>MCP 2515-I/P</td>    <td>651447 - 62</td></tr>
+              <tr><td>IC3</td><td>MCP2551-I/P</td>      <td>MCP 2551-I/P</td>    <td>651451 - 62</td></tr>
+              <tr><td>JP1, JP2</td><td>2pol 2,54mm</td> <td>SL 1X36G 2,54</td>   <td>742235 - 62</td></tr>
+              <tr><td>LED1</td><td>3mm LED red</td>     <td>LED 3MM 2MA RT</td>  <td>184560 - 62</td></tr>
+              <tr><td class="setpart">Q1</td><td class="setpart">24Mhz !fundamental!</td><td>-</td><td>-</td></tr>
+              <tr><td>R1, R2, R3, R5</td><td>1k</td>    <td>1/4W 1,0K</td>       <td>405256 - 62</td></tr>
+              <tr><td>R4</td><td>120</td>               <td>1/4W 120</td>        <td>405140 - 62</td></tr>
+              <tr class="startoptional"><td>M1</td><td>3pol</td><td>AKL 169-03</td> <td>729841 - 62</td></tr>
+              <tr><td>M2</td><td>Jumper</td>            <td>JUMPER 2,54GL SW</td>   <td>737557 - 62</td></tr>
+              <tr><td>M3</td><td>Socket 20</td>         <td>GS 20</td>              <td>189545 - 62</td></tr>
+              <tr><td>M4</td><td>Socket 18</td>         <td>GS 18</td>              <td>189537 - 62</td></tr>
+              <tr><td>M5</td><td>Socket 8</td>          <td>GS 8</td>               <td>189502 - 62</td></tr>
+              <tr><td>M6</td><td>Case</td>              <td>TEKO 10007</td>         <td>543335 - 62</td></tr>
+              <tr><td class="setpart">M7</td><td class="setpart">PCB</td>               <td>-</td>                  <td>-</td></tr>
+          </tbody></table>
+          <br>
+          <div style="margin-left: 100px;"><img src="./USBtin - USB to CAN interface - fischl.de_files/usbtin_top.png" alt="USBtin PCB top view"></div>
+          
+          <h2 id="troubleshooting">Troubleshooting</h2>
+          
+          <h3>Linux/Ubuntu: "Permission denied" when accessing /dev/ACM0</h3>
+          /dev/ttyACMx belongs to dialout group, so add user to this group (re-login or reboot to take effect!):
+          <pre class="listing">$sudo adduser $USER dialout</pre>
+          
+          <h3>Linux/Ubuntu/RaspberryPi: USBtin is blocked or misconfigured after plugging in or bootup</h3>
+          The program "network-manager" probes the serial port (sends strings for modem detection). Add rule so network-manager ignores USBtin:
+          <pre class="listing">sudo gedit /etc/udev/rules.d/10-local.rules</pre>
+          Add this line:
+          <pre class="listing">ATTRS{idVendor}=="04d8", ATTRS{idProduct}=="000a", ENV{ID_MM_DEVICE_IGNORE}="1"</pre>
+
+            <h2 id="gallery">Gallery</h2>
+            If you have built your own version of USBtin, please let me know!<br>
+            <br>
+            <table>
+                <tbody><tr>
+                    <td><a href="./USBtin - USB to CAN interface - fischl.de_files/usbtin.jpg"><img src="./USBtin - USB to CAN interface - fischl.de_files/usbtin.jpg" alt="USBtin by Thomas Fischl" width="150"></a><br></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td valign="top">
+                        by Thomas Fischl (04/2012)<br><br>
+                        USBtin-Set with PCB, programmed uC and crystal available:<br><a href="http://www.fischl.de/order/">Order USBtin-Set</a>. Other parts see <a href="http://www.fischl.de/usbtin/#partlist">partlist</a>.
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="http://www.fischl.de/usbtin/pics/clones/USBtin_Nico%20_Ferreira.jpg"><img src="./USBtin - USB to CAN interface - fischl.de_files/USBtin_Nico _Ferreira_small.jpg" alt="USBtin by Nico Ferreira"></a><br></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td valign="top">
+                        by Nico Ferreira (02/2014)<br><br>
+                        PCB is homemade with laser.<br>
+                        Plastic box is a Hammond 1551K.<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="http://www.fischl.de/usbtin/pics/clones/USBtin_John.jpg"><img src="./USBtin - USB to CAN interface - fischl.de_files/USBtin_John_small.jpg" alt="USBtin by John"></a><br></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td valign="top">
+                        by John (05/2014)<br><br>
+                        Wired on breadboard.<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="http://www.fischl.de/usbtin/pics/clones/USBtin_OBD2.jpg"><img src="./USBtin - USB to CAN interface - fischl.de_files/USBtin_OBD2_small.jpg" alt="USBtin by Βασίλης Σπυρόπουλος"></a><br></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td valign="top">
+                        by Βασίλης Σπυρόπουλος (07/2014)<br><br>
+                        Mounted in case Teko 10014.9.<br>
+                        With OBD-2 adapter cable.<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="http://www.fischl.de/usbtin/pics/clones/USBtin_Vladimir.jpg"><img src="./USBtin - USB to CAN interface - fischl.de_files/USBtin_Vladimir_small.jpg" alt="USBtin by Александр Сафонов"></a><br></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td valign="top">
+                        by Александр Сафонов (09/2014)<br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="./USBtin - USB to CAN interface - fischl.de_files/USBtin_John_Gerrard.jpg" alt="USBtin by John Gerrard"><br></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td valign="top">
+                        by John Gerrard (12/2014)<br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="http://www.fischl.de/usbtin/pics/clones/USBtin_Wago_Buskoppler.jpg"><img src="./USBtin - USB to CAN interface - fischl.de_files/USBtin_Wago_Buskoppler_small.jpg" alt="USBtin with Wago Buskoppler 750-307"></a><br></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td valign="top">
+                        USBtin EB and <a href="http://www.wago.de/produkte/produktkatalog/automatisierungskomponenten/modulares-io-system-ip20-serie-750-753/feldbuskoppler/index-7.jsp">Wago CANopen Fieldbus Coupler 750-307</a> test setup<br>
+                        by Georg G. (01/2015)<br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="http://www.fischl.de/usbtin/pics/clones/USBtin_Android.jpg"><img src="./USBtin - USB to CAN interface - fischl.de_files/USBtin_Android_small.jpg" alt="USBtin connected to Android device"></a><br></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td valign="top">
+                        USBtin EB connected to Android device with USB-OTG (Host) function.<br>
+			<a href="https://play.google.com/store/apps/details?id=com.oneman.freeusbtools">USB Serial Terminal Lite</a> is used to communicate with USBtin.
+                        <br>(04/2015)<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="http://basdebruijn.com/2015/05/sniffing-at-canopen/"><img src="./USBtin - USB to CAN interface - fischl.de_files/maxon-epos-canopen.jpg" alt="Maxon Epos CANopen with USBtin"></a><br></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td valign="top">
+                        USBtin connected to Maxon EPOS CANopen motor controller. USBtin is used for <a href="http://basdebruijn.com/2015/05/sniffing-at-canopen/">Sniffing at CANopen</a>.<br><br>
+Video: <a href="https://www.youtube.com/watch?v=Qf-Dv2nAK9M">Use USBtin to run CANopen devices from a Pyton script</a><br><br>
+                        by Bas de Bruijn (05/2015)<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="http://www.fischl.de/usbtin/canopen/"><img src="./USBtin - USB to CAN interface - fischl.de_files/Beckhoff_CANopen_USBtin_small.jpg" alt="Control LC5100 with USBtin"></a><br></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td valign="top">
+                        USBtin EB connected to Beckhoff LC5100 CANopen bus coupler.<br>
+                        For further details see <a href="http://www.fischl.de/usbtin/canopen/">Control CANopen devices with USBtin</a>.
+                        <br>(07/2015)<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="./USBtin - USB to CAN interface - fischl.de_files/USBtin_BMW_iDrive.jpg" alt="USBtin connected to BMW iDrive controller"><br></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td valign="top">
+                        USBtin EB communicates with <a href="http://www.bmw.de/de/footer/publications-links/technology-guide/idrive-touch-controller.html">BMW iDrive controller</a>.<br>
+                        <br>by Manuel R. (08/2015)<br>
+                    </td>
+                </tr>
+            </tbody></table>
+
+
+
+                <br>
+          <h2 id="links">Links</h2>
+          <a href="http://www.fischl.de/usbtin/linux_can_socketcan/">USBtin and linux-can (SocketCAN)</a><br>
+          <img src="./USBtin - USB to CAN interface - fischl.de_files/de.png" alt="de"> <a href="http://journal.embedded-projects.net/index.php?module=archiv&action=list">embedded projects Journal - Article about USBtin in Journal #13</a><br>
+          <h3>Other can interface projects</h3>
+          <img src="./USBtin - USB to CAN interface - fischl.de_files/en.png" alt="en"> <a href="http://www.canusb.com/">CANUSB adapter by LAWICEL</a><br>
+          <img src="./USBtin - USB to CAN interface - fischl.de_files/de.png" alt="de"> <a href="http://www.mhs-elektronik.de/index.php?module=content&action=show&page=tinycan_hardware">Tiny-CAN interface by MHS Elektronik</a><br>
+          <img src="./USBtin - USB to CAN interface - fischl.de_files/de.png" alt="de"> <a href="http://martinsuniverse.de/projekte/caninterceptor/caninterceptor.html">CAN interface with R8C/23</a><br>
+          <br>
+ 
+ 
+        
+           </div>
+        <div id="footer"> © 1998 - 2015 Thomas Fischl · <a href="http://www.fischl.de/privacy.html">Privacy Policy</a> · <a href="http://www.fischl.de/contact.html">Imprint/Impressum</a> </div>
+    
+
+<div id="SL_balloon_obj" alt="0" style="display: block;"><div id="SL_button" class="ImTranslatorLogo" style="display: none; background: url(chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/imtranslator-s.png);"></div><div id="SL_shadow_translation_result2" style="display: none;"></div><div id="SL_shadow_translator"><div id="SL_planshet" style="background: url(chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/bg2.png) rgb(244, 245, 245);"><div id="SL_TB"><div id="bubblelogo" class="ImTranslatorLogo" style="background: url(chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/imtranslator-s.png);"></div><table id="SL_tables" cellspacing="1"><tr><td class="SL_td" width="10%" align="right"><input id="SLloc" type="checkbox" title="Lock-in language"></td><td class="SL_td" width="20%" align="left"><select id="SL_lng_from"><option value="auto">Detect language</option><option value="af">Afrikaans</option><option value="sq">Albanian</option><option value="ar">Arabic</option><option value="hy">Armenian</option><option value="az">Azerbaijani</option><option value="eu">Basque</option><option value="be">Belarusian</option><option value="bn">Bengali</option><option value="bs">Bosnian</option><option value="bg">Bulgarian</option><option value="ca">Catalan</option><option value="ceb">Cebuano</option><option value="ny">Chichewa</option><option value="zh-CN">Chinese (Simplified)</option><option value="zh-TW">Chinese (Traditional)</option><option value="hr">Croatian</option><option value="cs">Czech</option><option value="da">Danish</option><option value="nl">Dutch</option><option value="en">English</option><option value="eo">Esperanto</option><option value="et">Estonian</option><option value="tl">Filipino</option><option value="fi">Finnish</option><option value="fr">French</option><option value="gl">Galician</option><option value="ka">Georgian</option><option value="de">German</option><option value="el">Greek</option><option value="gu">Gujarati</option><option value="ht">Haitian Creole</option><option value="ha">Hausa</option><option value="iw">Hebrew</option><option value="hi">Hindi</option><option value="hmn">Hmong</option><option value="hu">Hungarian</option><option value="is">Icelandic</option><option value="ig">Igbo</option><option value="id">Indonesian</option><option value="ga">Irish</option><option value="it">Italian</option><option value="ja">Japanese</option><option value="jw">Javanese</option><option value="kn">Kannada</option><option value="kk">Kazakh</option><option value="km">Khmer</option><option value="ko">Korean</option><option value="lo">Lao</option><option value="la">Latin</option><option value="lv">Latvian</option><option value="lt">Lithuanian</option><option value="mk">Macedonian</option><option value="mg">Malagasy</option><option value="ms">Malay</option><option value="ml">Malayalam</option><option value="mt">Maltese</option><option value="mi">Maori</option><option value="mr">Marathi</option><option value="mn">Mongolian</option><option value="my">Myanmar (Burmese)</option><option value="ne">Nepali</option><option value="no">Norwegian</option><option value="fa">Persian</option><option value="pl">Polish</option><option value="pt">Portuguese</option><option value="pa">Punjabi</option><option value="ro">Romanian</option><option value="ru">Russian</option><option value="sr">Serbian</option><option value="st">Sesotho</option><option value="si">Sinhala</option><option value="sk">Slovak</option><option value="sl">Slovenian</option><option value="so">Somali</option><option value="es">Spanish</option><option value="su">Sundanese</option><option value="sw">Swahili</option><option value="sv">Swedish</option><option value="tg">Tajik</option><option value="ta">Tamil</option><option value="te">Telugu</option><option value="th">Thai</option><option value="tr">Turkish</option><option value="uk">Ukrainian</option><option value="ur">Urdu</option><option value="uz">Uzbek</option><option value="vi">Vietnamese</option><option value="cy">Welsh</option><option value="yi">Yiddish</option><option value="yo">Yoruba</option><option value="zu">Zulu</option></select></td><td class="SL_td" width="3" align="center"><div id="SL_switch_b" title="Switch languages" style="background: url(chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/switchb.png);"></div></td><td class="SL_td" width="20%" align="left"><select id="SL_lng_to"><option value="af">Afrikaans</option><option value="sq">Albanian</option><option value="ar">Arabic</option><option value="hy">Armenian</option><option value="az">Azerbaijani</option><option value="eu">Basque</option><option value="be">Belarusian</option><option value="bn">Bengali</option><option value="bs">Bosnian</option><option value="bg">Bulgarian</option><option value="ca">Catalan</option><option value="ceb">Cebuano</option><option value="ny">Chichewa</option><option value="zh-CN">Chinese (Simplified)</option><option value="zh-TW">Chinese (Traditional)</option><option value="hr">Croatian</option><option value="cs">Czech</option><option value="da">Danish</option><option value="nl">Dutch</option><option value="en">English</option><option value="eo">Esperanto</option><option value="et">Estonian</option><option value="tl">Filipino</option><option value="fi">Finnish</option><option value="fr">French</option><option value="gl">Galician</option><option value="ka">Georgian</option><option value="de">German</option><option value="el">Greek</option><option value="gu">Gujarati</option><option value="ht">Haitian Creole</option><option value="ha">Hausa</option><option value="iw">Hebrew</option><option value="hi">Hindi</option><option value="hmn">Hmong</option><option value="hu">Hungarian</option><option value="is">Icelandic</option><option value="ig">Igbo</option><option value="id">Indonesian</option><option value="ga">Irish</option><option value="it">Italian</option><option value="ja">Japanese</option><option value="jw">Javanese</option><option value="kn">Kannada</option><option value="kk">Kazakh</option><option value="km">Khmer</option><option value="ko">Korean</option><option value="lo">Lao</option><option value="la">Latin</option><option value="lv">Latvian</option><option value="lt">Lithuanian</option><option value="mk">Macedonian</option><option value="mg">Malagasy</option><option value="ms">Malay</option><option value="ml">Malayalam</option><option value="mt">Maltese</option><option value="mi">Maori</option><option value="mr">Marathi</option><option value="mn">Mongolian</option><option value="my">Myanmar (Burmese)</option><option value="ne">Nepali</option><option value="no">Norwegian</option><option value="fa">Persian</option><option value="pl">Polish</option><option value="pt">Portuguese</option><option value="pa">Punjabi</option><option value="ro">Romanian</option><option value="ru">Russian</option><option value="sr">Serbian</option><option value="st">Sesotho</option><option value="si">Sinhala</option><option value="sk">Slovak</option><option value="sl">Slovenian</option><option value="so">Somali</option><option selected="selected" value="es">Spanish</option><option value="su">Sundanese</option><option value="sw">Swahili</option><option value="sv">Swedish</option><option value="tg">Tajik</option><option value="ta">Tamil</option><option value="te">Telugu</option><option value="th">Thai</option><option value="tr">Turkish</option><option value="uk">Ukrainian</option><option value="ur">Urdu</option><option value="uz">Uzbek</option><option value="vi">Vietnamese</option><option value="cy">Welsh</option><option value="yi">Yiddish</option><option value="yo">Yoruba</option><option value="zu">Zulu</option></select></td><td class="SL_td" width="5%" align="center"> </td><td class="SL_td" width="8%" align="center"><div id="SL_TTS_voice" title="Listen to the translation" style="background: url(chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/tts-voice.png);"></div></td><td class="SL_td" width="8%" align="center"><div id="SL_copy" title="Copy translation" class="SL_copy" style="background: url(chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/copy_hand.png);"></div></td><td class="SL_td" width="8%" align="center"><div id="SL_bbl_font_patch" onclick="alert(chrome.i18n.getMessage(&#39;extNot_available&#39;))"></div><div id="SL_bbl_font" title="Font size" class="SL_bbl_font" style="background: url(chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/font-off.png);"></div></td><td class="SL_td" width="8%" align="center"><div id="SL_TH" title="Translation history" style="background: url(chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/history.png);"></div></td><td class="SL_td" width="18%"></td><td class="SL_td" width="8%" align="right"><div id="SL_pin" title="Pin pop-up bubble" style="background: url(chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/pin-on.png);"></div></td></tr></table></div></div><div id="SL_shadow_translation_result" style="background: url(chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/bg.png) rgb(255, 255, 255);"></div><div id="SL_player2"></div><div id="SL_alert100" style="background: url(chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/bg2.png);">Text-to-speech function is limited to 100 characters</div><div id="SL_bbl_donate" title="Make a small contribution" style="background: url(chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/donate2.png);"></div><div id="SL_Balloon_options" style="background: url(chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/bg3.png) rgb(255, 255, 255);"><a href="chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/html/options/options-bbl.html" target="_blank" class="SL_options" title="Show options">Options</a> : <a href="chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/html/options/history.html" target="_blank" class="SL_options" title="Translation history">History</a> : <a href="http://about.imtranslator.net/tutorials/presentations/imtranslator-for-chrome/chrome-bubble-translator/" target="_blank" class="SL_options" title="ImTranslator Help">Help</a> : <a href="chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/html/options/feedback.html" target="_blank" class="SL_options" title="ImTranslator Feedback">Feedback</a><span id="SL_Balloon_Close" title="Close">Close</span></div></div></div></body></html>

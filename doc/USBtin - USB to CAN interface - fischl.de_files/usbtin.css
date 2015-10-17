@@ -1,0 +1,72 @@
+h2 {
+    margin-top: 35px;
+}
+
+h4 {
+    margin-bottom: 4px;
+}
+
+#cmdtable {
+    border-collapse:collapse;
+}
+
+#cmdtable td {
+    vertical-align:top;
+    border:1px solid #ccc;
+    padding: 3px;
+} 
+
+#boardtip {
+    left: 910px;
+    margin-bottom: -25px;
+    position: relative;
+    width: 230px;
+    background-color: #EDF0F6;
+    text-align: center;
+    padding: 10px;
+}
+
+#toc ul {
+    list-style-type: none;
+    list-style-image: none;
+}
+
+.download {
+    display:inline-block;
+    background: url(pics/download_icon.png) 0px 5px no-repeat;
+    padding-left: 25px;
+    padding-top: 5px;
+    height:20px;
+}
+
+.pdf {
+    display:inline-block;
+    background: url(pics/pdf_icon.png) 0px 5px no-repeat;
+    padding-left: 25px;
+    padding-top: 7px;
+    height:20px;
+}
+
+.link_en {
+    display:inline-block;
+    background: url(../pics/en.png) 0px 5px no-repeat;
+    padding-left: 22px;
+    padding-top: 2px;
+    height: 17px;
+    margin-top: 3px;
+    margin-left: 3px;
+}
+
+.link_de {
+    display:inline-block;
+    background: url(../pics/de.png) 0px 5px no-repeat;
+    padding-left: 22px;
+    padding-top: 2px;
+    height: 17px;
+    margin-top: 3px;
+    margin-left: 3px;
+}
+
+.setpart {
+    color:red;
+}
